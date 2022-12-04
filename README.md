@@ -1,1 +1,1 @@
-# ilya94732-gmail.com
+# Bash script for test in GlobaLogic
