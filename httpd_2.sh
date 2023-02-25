@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Install httpd
+#Install httpd in RHEL
 echo "--------------------yum update and install httpd-------------------------------------"
 yum update -y && yum install -y httpd
 sleep 2
