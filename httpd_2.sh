@@ -4,15 +4,19 @@
 echo "--------------------yum update and install httpd-------------------------------------"
 yum update -y && yum install -y httpd
 sleep 2
+
 echo "--------------------systemctl start and enable httpd-------------------------------------"
 systemctl start httpd && systemctl enable httpd
 sleep 2
+
 #Create domain directory
 mkdir -p /var/www/test/html && mkdir -p /var/www/test/log
 sleep 2
+
 #Change owner and change mode
 chown -R userok:userok /var/www/test/html && chmod -R 755 /var/www
 echo "--------------------html first name and last name-------------------------------------"
+
 #Create index.html
 echo "<html><body>Illia Korniienko</body></html>" > /var/www/test/html/index.html
 
@@ -29,6 +33,7 @@ echo "</VirtualHost>" >> /etc/httpd/sites-available/test.conf
 #Create soft link
 ln -s /etc/httpd/sites-available/test.conf /etc/httpd/sites-enabled/test.conf
 echo "--------------------httpd -t and reload-------------------------------------"
+
 #Test apache and reload
 httpd -t && systemctl reload httpd
 
